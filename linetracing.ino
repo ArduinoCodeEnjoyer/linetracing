@@ -1,4 +1,4 @@
-#include <ATX2.H>
+#include <ATX2.h>
 
 int sensor[5]={0};
 float error = 0;
@@ -8,12 +8,13 @@ float prev_error = 0, prev_I = 0;
 float Kp = 20,Ki = 0,Kd = 15;
 float PID_Value = 0;
 int base_speed = 30;
+int Lspeed = 0;
+int Rspeed = 0;
 
 void setup(){
   XIO();  // ATX2 initialize
   setTextSize(2);
   glcdMode(3);
-  pinMode()
 }
 
 
@@ -82,6 +83,6 @@ void loop() {
   if(Rspeed < -100){
     Rspeed = -100;
   }
-  motor(1,LSpeed);
+  motor(1,Lspeed);
   motor(2,Rspeed);
 }
